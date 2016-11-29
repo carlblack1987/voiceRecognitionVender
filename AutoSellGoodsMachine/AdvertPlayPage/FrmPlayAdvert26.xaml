@@ -1,0 +1,53 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmPlayAdvert26"
+	x:Name="PlayAdvert26"
+ 	WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+    Closing="Window_Closing" 
+	FlowDirection="LeftToRight"
+	FontFamily="Microsoft YaHei" Width="730" Height="560">
+
+    <Grid x:Name="layout">
+        <Grid x:Name="panelAdvert_Img" Background="Black" MouseLeftButtonDown="panelInit_MouseLeftButtonDown"
+              VerticalAlignment="Top" Width="768" Height="1265"
+              HorizontalAlignment="Center">
+            <Image  x:Name="advertImg"
+                    Source="pack://siteoforigin:,,,/Images/B9.jpg"
+                    HorizontalAlignment="Stretch"
+                VerticalAlignment="Top" Margin="0" Stretch="Fill"  />
+            <MediaElement Name="videoScreenMediaElement" Height="600" Width="1000" 
+                          Source="e:/advert.wmv" ScrubbingEnabled="True"  Stretch="Fill" HorizontalAlignment="Stretch"
+                          LoadedBehavior="Manual"  Volume="{Binding ElementName=volumeSlider, Path=Value}" 
+                          MediaOpened="videoScreenMediaElement_MediaOpened" Margin="0" 
+                          MediaEnded="videoScreenMediaElement_MediaEnded" 
+                          MouseLeftButtonDown="videoScreenMediaElement_MouseLeftButtonDown" />
+        </Grid>
+
+        <!--2015/01/24添加-->
+        <Grid x:Name="panelBottom" Height="200"  HorizontalAlignment="Center" 
+                RenderTransformOrigin="0,0"   VerticalAlignment="Bottom" MouseLeftButtonDown="panelBottom_MouseLeftButtonDown">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <TranslateTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image x:Name="imgBottom" Stretch="Fill" Source="pack://siteoforigin:,,,/Images/AdvertPic/advert_26_bg.png"  Grid.ColumnSpan="2"></Image>
+
+            <TextBlock  x:Name="tbInfo_Bottom"  Grid.ColumnSpan="2" FontSize="56" TextAlignment="Justify"
+                        HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        Background="Transparent" Foreground="White" Text="请点击屏幕开始购物">
+            </TextBlock>
+        </Grid>
+    </Grid>
+    
+</Window>

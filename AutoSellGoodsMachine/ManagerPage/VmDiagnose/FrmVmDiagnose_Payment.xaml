@@ -1,0 +1,103 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmVmDiagnose_Payment"
+	x:Name="VmDiagnose_Payment"
+    Loaded="Window_Loaded"
+    Closing="Window_Closing" 
+	FlowDirection="LeftToRight"
+    FontFamily="Microsoft YaHei"
+	d:DesignWidth="768" d:DesignHeight="1360" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource background1}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23"/>
+        <TextBlock x:Name="tbTitle" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="327" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36" Text=""/>
+        <Grid Margin="0,52.667,0,47.333" Grid.Row="1" Width="680" Height="1180" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid Margin="0,0,0,95">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="2" Opacity="0.3" Direction="275"/>
+                </Grid.Effect>
+                <!--现金支付-->
+                <Grid HorizontalAlignment="Left" Height="244" VerticalAlignment="Top" Width="314.026">
+                    <TextBlock x:Name="tbCashTitle" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Style="{DynamicResource Style_Text_Section}"><Run Language="zh-cn" Text="现金支付"/></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Opacity="0.5"/>
+                    <TextBlock x:Name="tbCashSwitch_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Style="{DynamicResource Style_Text_Column_1}" Margin="0,52,0,0"><Run Language="zh-cn" Text="支付开关"/></TextBlock>
+                    <TextBlock x:Name="tbBill_Text" HorizontalAlignment="Left" TextWrapping="Wrap" Width="133" Style="{DynamicResource Style_Text_Column_1}" Margin="0,97,0,89"><Run Language="zh-cn" Text="纸币器"/></TextBlock>
+                    <TextBlock x:Name="tbCoin_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="133" Style="{DynamicResource Style_Text_Column_1}" Margin="0,0,0,74"><Run Language="zh-cn" Text="硬币器"/></TextBlock>
+                    <TextBlock x:Name="tbCashSwitch_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Style="{DynamicResource Style_Text_Column_1}" Margin="148,52,15.026,0"><Run Language="zh-cn" Text="开启"/></TextBlock>
+                    <TextBlock x:Name="tbBill_Value" TextWrapping="Wrap" Style="{DynamicResource Style_Text_Column_1}" Margin="148,97,15,89"><Run Language="zh-cn" Text="正常"/></TextBlock>
+                    <TextBlock x:Name="tbCoin_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Bottom" Style="{DynamicResource Style_Text_Column_1}" Margin="148,0,15,74"><Run Language="zh-cn" Text="正常"/></TextBlock>
+                </Grid>
+                <!--储值卡支付-->
+                <Grid HorizontalAlignment="Right" Height="214" VerticalAlignment="Top" Width="314.026">
+                    <TextBlock x:Name="tbPosTitle" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="282"  Style="{DynamicResource Style_Text_Section}"><Run Language="zh-cn" Text="储值卡支付"/></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Opacity="0.5"/>
+                    <TextBlock x:Name="tbPosSwitch_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,52,0,0"><Run Language="zh-cn" Text="支付开关"/></TextBlock>
+                    <TextBlock x:Name="tbPosVer_Text" HorizontalAlignment="Left" TextWrapping="Wrap" Width="142"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,97,0,89"><Run Language="zh-cn" Text="组件版本"/></TextBlock>
+                    <TextBlock x:Name="tbPosStatus_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="142"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,0,0,44"><Run Language="zh-cn" Text="设备状态"/></TextBlock>
+                    <TextBlock x:Name="tbPosSwitch_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Top"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,52,15.026,0"><Run Language="zh-cn" Text="开启"/></TextBlock>
+                    <TextBlock x:Name="tbPosVer_Value" TextWrapping="Wrap"  FontSize="18" Foreground="White" Margin="148,97,-13,89"><Run Language="zh-cn" Text="POSCARD_XKP"/></TextBlock>
+                    <TextBlock x:Name="tbPosStatus_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Bottom"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,0,53.026,44"><Run Language="zh-cn" Text="正常"/></TextBlock>
+                </Grid>
+                <!--会员卡支付-->
+                <Grid HorizontalAlignment="Left" Height="214" VerticalAlignment="Top" Width="314.026" Margin="0,208,0,0">
+                    <TextBlock x:Name="tbNoFeeCardTitle" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" Style="{DynamicResource Style_Text_Section}"><Run Language="zh-cn" Text="会员卡支付"/></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Opacity="0.5"/>
+                    <TextBlock x:Name="tbNoFeeCardSwitch_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,52,0,0"><Run Language="zh-cn" Text="支付开关"/></TextBlock>
+                    <TextBlock x:Name="tbNoFeeCardVer_Text" HorizontalAlignment="Left" TextWrapping="Wrap" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,97,0,89"><Run Language="zh-cn" Text="组件版本"/></TextBlock>
+                    <TextBlock x:Name="tbNoFeeCardStatus_Text" HorizontalAlignment="Left" VerticalAlignment="Bottom" TextWrapping="Wrap" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,0,0,44"><Run Language="zh-cn" Text="设备状态"/></TextBlock>
+                    <TextBlock x:Name="tbNoFeeCardSwitch_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Top"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,52,15.026,0"><Run Language="zh-cn" Text="开启"/></TextBlock>
+                    <TextBlock x:Name="tbNoFeeCardVer_Value" TextWrapping="Wrap"  FontSize="18" Foreground="White" Margin="148,97,-16,89"><Run Language="zh-cn" Text="NoFeeCard_MQ"/></TextBlock>
+                    <TextBlock x:Name="tbNoFeeCardStatus_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Bottom"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,0,53.026,44"><Run Language="zh-cn" Text="正常"/></TextBlock>
+                </Grid>
+                <!--微信扫码-->
+                <Grid HorizontalAlignment="Right" Height="214" VerticalAlignment="Top" Width="314.026" Margin="0,208,0,0">
+                    <TextBlock x:Name="tbWeChatCodeTitle" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"  Style="{DynamicResource Style_Text_Section}"><Run Language="zh-cn" Text="支付宝支付"/></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Opacity="0.5"/>
+                    <TextBlock x:Name="tbWeChatCodeSwitch_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,52,0,0"><Run Language="zh-cn" Text="支付开关"/></TextBlock>
+                    <TextBlock x:Name="tbWeChatCodeSwitch_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Top"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,52,15.026,0"><Run Language="zh-cn" Text="开启"/></TextBlock>
+                </Grid>
+                <!--银联卡支付-->
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="314.026" Margin="0,408,0,0">
+                    <TextBlock x:Name="tbUnionPayTitle" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="279"  Style="{DynamicResource Style_Text_Section}"><Run Language="zh-cn" Text="银联支付"/></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Opacity="0.5"/>
+                    <TextBlock x:Name="tbUnipnPaySwitch_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,52,0,0"><Run Language="zh-cn" Text="支付开关"/></TextBlock>
+                    <TextBlock x:Name="tbUnionPayVer_Text" HorizontalAlignment="Left" TextWrapping="Wrap" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,97,0,89"><Run Language="zh-cn" Text="组件版本"/></TextBlock>
+                    <TextBlock x:Name="tbUnipnPaySwitch_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Top"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,52,15.026,0"><Run Language="zh-cn" Text="开启"/></TextBlock>
+                    <TextBlock x:Name="tbUnionPayVer_Value" TextWrapping="Wrap"  FontSize="18" Foreground="White" Margin="148,97,6,89"><Run Language="zh-cn" Text="UnionPay_1"/></TextBlock>
+                </Grid>
+                <!--二维码支付-->
+                <Grid HorizontalAlignment="Right" Height="214" VerticalAlignment="Top" Width="314.026" Margin="0,408,0,0">
+                    <TextBlock x:Name="tbQRTitle" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Style="{DynamicResource Style_Text_Section}"><Run Language="zh-cn" Text="二维码支付"/></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Opacity="0.5"/>
+                    <TextBlock x:Name="tbQRSwitch_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,52,0,0"><Run Language="zh-cn" Text="支付开关"/></TextBlock>
+                    <TextBlock x:Name="tbQRVer_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,97,0,89"><Run Language="zh-cn" Text="组件版本"/></TextBlock>
+                    <TextBlock x:Name="tbQRStatus_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,0,0,44"><Run Language="zh-cn" Text="设备状态"/></TextBlock>
+                    <TextBlock x:Name="tbQRSwitch_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Top"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,52,15.026,0"><Run Language="zh-cn" Text="开启"/></TextBlock>
+                    <TextBlock x:Name="tbQRVer_Value" Height="28" TextWrapping="Wrap"  FontSize="18" Foreground="White" Margin="148,97,6,89"><Run Language="zh-cn" Text="QR_1"/></TextBlock>
+                    <TextBlock x:Name="tbQRStatus_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Bottom"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,0,53.026,44"><Run Language="zh-cn" Text="正常"/></TextBlock>
+                </Grid>
+
+                <!--支付宝扫码支付-->
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="314.026" Margin="0,608,0,0">
+                    <TextBlock x:Name="tbAliPayCodeTitle" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="279"  Style="{DynamicResource Style_Text_Section}"><Run Language="zh-cn" Text="支付宝扫码支付"/></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" StrokeThickness="2" Opacity="0.5"/>
+                    <TextBlock x:Name="tbAliPayCodeSwitch_Text" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"  Style="{DynamicResource Style_Text_Column_1}" Margin="0,52,0,0"><Run Language="zh-cn" Text="支付开关"/></TextBlock>
+                    <TextBlock x:Name="tbAliPayCodeSwitch_Value" Height="28" TextWrapping="Wrap" VerticalAlignment="Top"  Style="{DynamicResource Style_Text_Column_1}" Margin="148,52,15.026,0"><Run Language="zh-cn" Text="开启"/></TextBlock>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Margin="366,608,0,0" VerticalAlignment="Top" Width="314.026">
+                    <TextBlock Height="28" HorizontalAlignment="Left" Name="tbBestPayCodeTitle" Style="{DynamicResource Style_Text_Section}" TextWrapping="Wrap" VerticalAlignment="Top" Width="279"><Run Language="zh-cn" Text="翼支付付款码支付" /></TextBlock>
+                    <Path Data="M0,36 L313.02556,36" Fill="#FFF4F4F5" Height="1" Margin="0,40,0,0" Opacity="0.5" Stretch="Fill" Stroke="White" StrokeThickness="2" VerticalAlignment="Top" />
+                    <TextBlock Height="28" HorizontalAlignment="Left" Margin="0,52,0,0" Name="tbBestPayCodeSwitch_Text" Style="{DynamicResource Style_Text_Column_1}" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"><Run Language="zh-cn" Text="支付开关" /></TextBlock>
+                    <TextBlock Height="28" Margin="148,52,15.026,0" Name="tbBestPayCodeSwitch_Value" Style="{DynamicResource Style_Text_Column_1}" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="zh-cn" Text="开启" /></TextBlock>
+                </Grid>
+            </Grid>
+            <Path Data="M0,36 L313.02556,36" Margin="0,0,0,115" Fill="#FFF4F4F5" Height="1" Stretch="Fill" Stroke="White" VerticalAlignment="Bottom" StrokeThickness="2" Opacity="0.5"/>
+            <Button x:Name="btnCancel" Focusable="False" Cursor="Hand" Content="取消" HorizontalAlignment="Right" Height="74" Margin="0,0,0,20" Style="{DynamicResource Yellow button}" VerticalAlignment="Bottom" Width="88" Foreground="White"  FontSize="18" Click="btnCancel_Click" />
+        </Grid>
+    </Grid>
+</Window>

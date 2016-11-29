@@ -1,0 +1,36 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmVmDiagnose_Asile"
+	x:Name="VmDiagnose_Asile"
+    Loaded="Window_Loaded"
+    Closing="Window_Closing" 
+ 	WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal"
+	FlowDirection="LeftToRight"
+	FontFamily="Microsoft YaHei" Width="730" Height="820">
+
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource background2}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23"/>
+        <TextBlock x:Name="tbTitle" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="329" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36"  Text="通信设置"/>
+        <Grid Margin="0,52.667,0,0" Grid.Row="1" Width="680" Height="680" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid Height="570" VerticalAlignment="Top">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="2" Opacity="0.3" Direction="275"/>
+                </Grid.Effect>
+
+                <TextBlock x:Name="tbAsileCode" HorizontalAlignment="Left" TextWrapping="Wrap" Width="196" Style="{DynamicResource Style_Text_Column}" VerticalAlignment="Top" Height="550"  Margin="6,0,0,0" Text="Shipping Methods" TextAlignment="Right"></TextBlock>
+                <TextBlock FontSize="22" Foreground="{DynamicResource text}" Height="550" HorizontalAlignment="Left" Margin="228,0,0,0" Name="tbAsileStatus" Text="通信类型" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="377" />
+            </Grid>
+
+            <Button x:Name="btnCancel" Content="取消" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Margin="0,0,0,10" Style="{DynamicResource Yellow button}" VerticalAlignment="Bottom" Width="88" Height="74" FontSize="22" Foreground="White" Click="btnCancel_Click" />
+            <Path Data="M0,734 L672,734" Fill="#FFF4F4F5" Height="2" Margin="0,0,0,105" Stretch="Fill" Stroke="White" VerticalAlignment="Bottom" Opacity="0.5"/>
+
+        </Grid>
+    </Grid>
+</Window>
+

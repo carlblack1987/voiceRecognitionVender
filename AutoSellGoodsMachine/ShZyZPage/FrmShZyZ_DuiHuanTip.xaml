@@ -1,0 +1,56 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmShZyZ_DuiHuanTip"
+	x:Name="ShZyZ_DuiHuanTip"
+	Loaded="Window_Loaded"
+    Closing="Window_Closing" 
+	FlowDirection="LeftToRight"
+	Width="700" Height="1000"
+	WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal"
+    FontFamily="Microsoft YaHei UI"
+ 	Background="{DynamicResource background2}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{x:Null}">
+
+    <Grid x:Name="layout">
+        <Grid x:Name="panel_Content" Height="900"  HorizontalAlignment="Left" 
+                VerticalAlignment="Top" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <TranslateTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="img_Bg" Stretch="Fill" Source="pack://siteoforigin:,,,/Images/FormPic/pub/Main_Area_Lgs_Bottom.png" Grid.ColumnSpan="2"></Image>
+        </Grid>
+
+        <Grid x:Name="panel_Bottom" Height="100"  HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <TranslateTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+
+            <Image x:Name="imgBottom" Stretch="Fill" Source="pack://siteoforigin:,,,/Images/AdvertPic/advert_26_bg.png"></Image>
+
+            <TextBlock  x:Name="tbOutTime"  FontSize="35" TextAlignment="Justify"
+                        HorizontalAlignment="Left" VerticalAlignment="Center" 
+                        Background="Transparent" Foreground="White" Text="" Margin="20,0,0,0">
+            </TextBlock>
+            <Button x:Name="btnCancel" Content="返回"  Cursor="Hand" Focusable="False" 
+                    HorizontalAlignment="Right" Height="50" Margin="0,20,10,10" 
+                    Style="{DynamicResource Green button}" VerticalAlignment="Stretch" 
+                    Width="100" FontSize="25" Foreground="White" Click="btnCancel_Click" />
+        </Grid>
+    </Grid>
+</Window>

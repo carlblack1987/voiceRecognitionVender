@@ -1,0 +1,104 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="background1" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF1D6492" Offset="1"/>
+        <GradientStop Color="#FF0D739D"/>
+        <GradientStop Color="#FF0092CF" Offset="0.45"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="text" Color="White"/>
+
+    <!--窗口标题文本样式-->
+    <Style x:Key="Style_Text_FormTitle">
+        <Setter Property="TextBlock.Foreground" Value="White"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="28"></Setter>
+    </Style>
+    
+    <!--章节文本样式-->
+    <Style x:Key="Style_Text_Section">
+        <Setter Property="TextBlock.Foreground" Value="Yellow"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="22"></Setter>
+    </Style>
+
+    <!--内容题目文本样式一，主要用于高级设置中的菜单窗体-->
+    <Style x:Key="Style_Text_Column">
+        <Setter Property="TextBlock.Foreground" Value="Yellow"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="22"></Setter>
+    </Style>
+
+    <!--内容题目文本样式一，主要用于一般设置中的窗体-->
+    <Style x:Key="Style_Text_Column_1">
+        <Setter Property="TextBlock.Foreground" Value="White"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="22"></Setter>
+    </Style>
+
+    <!--提示语文本样式-->
+    <Style x:Key="Style_Text_TipInfo">
+        <Setter Property="TextBlock.Foreground" Value="Orange"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="18"></Setter>
+        <Setter Property="TextBlock.FontWeight" Value="Bold"></Setter>
+    </Style>
+
+    <!--上海志愿者—文本样式-->
+    <Style x:Key="Style_Text_ShZyZ_Title">
+        <Setter Property="TextBlock.Foreground" Value="White"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="25"></Setter>
+    </Style>
+
+    <!--上海志愿者—文本样式-->
+    <Style x:Key="Style_Text_ShZyZ_Value">
+        <Setter Property="TextBlock.Foreground" Value="Orange"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="25"></Setter>
+        <Setter Property="TextBlock.FontWeight" Value="Normal"></Setter>
+    </Style>
+
+    <Style x:Key="Style_Text_ShZyZ_TipInfo">
+        <Setter Property="TextBlock.Foreground" Value="Black"></Setter>
+        <Setter Property="TextBlock.FontSize" Value="18"></Setter>
+        <Setter Property="TextBlock.FontWeight" Value="Normal"></Setter>
+    </Style>
+
+    <SolidColorBrush x:Key="countdowntext" Color="Yellow"/><!--倒计时文本-->
+    <LinearGradientBrush x:Key="Button normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                <RotateTransform Angle="123" CenterY="0.5" CenterX="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF058DCD" Offset="0"/>
+        <GradientStop Color="#FF33B5FF" Offset="1"/>
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="Button down">
+        <RadialGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="2" ScaleY="2"/>
+                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </RadialGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF048CD0" Offset="0"/>
+        <GradientStop Color="#FF006BA3" Offset="0.3"/>
+        <GradientStop Color="#FF014162" Offset="0.73"/>
+    </RadialGradientBrush>
+    <LinearGradientBrush x:Key="Button disabled" EndPoint="0.5,1" StartPoint="0.5,0">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                <RotateTransform Angle="123" CenterY="0.5" CenterX="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#FF6C6C6C" Offset="0"/>
+        <GradientStop Color="#FF969696" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="background2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF2A5B7B" Offset="0"/>
+        <GradientStop Color="#FF386989" Offset="1"/>
+    </LinearGradientBrush>
+    <!-- 应该在此定义资源字典条目。-->
+</ResourceDictionary>

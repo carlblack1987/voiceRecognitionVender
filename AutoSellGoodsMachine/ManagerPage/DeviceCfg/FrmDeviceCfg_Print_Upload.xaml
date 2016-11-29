@@ -1,0 +1,30 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmDeviceCfg_Print_Upload"
+	x:Name="DeviceCfg_Print_Upload"
+	WindowStyle="None" 
+	ResizeMode="NoResize" 
+	WindowStartupLocation="CenterScreen" 
+	WindowState="Normal"
+	FlowDirection="LeftToRight"
+	Width="500" Height="269"
+    Opacity="0.5"
+ 	Foreground="{x:Null}" Background="{DynamicResource background2}" HorizontalAlignment="Center" VerticalAlignment="Center" >
+    <Window.Effect>
+        <DropShadowEffect Direction="275" ShadowDepth="6" BlurRadius="12" Opacity="0.6"/>
+    </Window.Effect>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23" Margin="0"/>
+        <TextBlock x:Name="tbTitle" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36" FontFamily="Microsoft YaHei UI"><Run Language="zh-cn" Text=""/><Run Text=""/></TextBlock>
+        <Button x:Name="btnNo" Focusable="False" Cursor="Hand" Content="" HorizontalAlignment="Right" Style="{DynamicResource Yellow button}" VerticalAlignment="Bottom" Width="120" Height="48" FontFamily="Microsoft YaHei" FontSize="22" Foreground="White" Margin="0,0,108,31" Grid.Row="1" d:LayoutOverrides="HorizontalAlignment" Click="btnNo_Click" />
+        <Button x:Name="btnYes" Focusable="False" Cursor="Hand" Content="" HorizontalAlignment="Left" Margin="105,0,0,31" Style="{DynamicResource Green button}" VerticalAlignment="Bottom" Width="120" Height="48" FontFamily="Microsoft YaHei" FontSize="22" Foreground="White" Grid.Row="1" d:LayoutOverrides="HorizontalAlignment" Click="btnYes_Click" />
+        <TextBlock x:Name="tbInfo" Margin="0,-82,0,0" TextWrapping="Wrap" FontSize="20" Foreground="{DynamicResource text}" VerticalAlignment="Center" Height="36" FontFamily="Microsoft YaHei UI" Grid.Row="1" HorizontalAlignment="Center" Text=""></TextBlock>
+    </Grid>
+</Window>

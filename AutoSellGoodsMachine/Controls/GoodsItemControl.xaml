@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="AutoSellGoodsMachine.Controls.GoodsItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Storyboard   x:Key="Storyboard1" RepeatBehavior="Forever" AutoReverse="False">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-10.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="11.25">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-10.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-10.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0" Value="8.75"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-8">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <PowerEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="8.75">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="8.75"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid Margin="0,5">
+        <Grid  VerticalAlignment="Bottom" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image HorizontalAlignment="Center"  Stretch="Uniform" 
+               Cursor="Hand" x:Name="imgProduct" Source="pack://siteoforigin:,,,/Images/FormPic/Skin/Cloud/ProductPage/ProductList/bottom-area-lgs.png"/>
+
+            <Grid x:Name="gdPriceArea" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Bottom" Visibility="Visible">
+                <Image HorizontalAlignment="Center" Grid.Row="1" x:Name="imagePrice"  Stretch="Fill"    
+                  Cursor="Hand" Source="pack://siteoforigin:,,,/Images/FormPic/Skin/Cloud/ProductPage/ProductList/main_price.png"/>
+                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="tbPrice"  Foreground="White" FontSize="20" Text="" FontFamily="Agency FB" >
+                    <Run x:Name="tbSellOut" Foreground="Orange" FontSize="18"></Run><Run x:Name="tbAsileCode" Foreground="Yellow" FontSize="22"></Run><Run x:Name="tbAsilePrice" Foreground="White" FontSize="22"></Run>
+                </TextBlock>
+            </Grid>
+
+            <Grid  Grid.Row="1" x:Name="panelSellEnd" VerticalAlignment="Bottom" HorizontalAlignment="Center"    Margin="10,0,10,0">
+                <Image HorizontalAlignment="Center" Grid.Row="1"  Stretch="Uniform" 
+               Cursor="Hand" x:Name="imgSellEnd" Source="pack://siteoforigin:,,,/Images/FormPic/Skin/Cloud/ProductPage/ProductList/sellout.png"/>
+                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" Text="已售完"></TextBlock>
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="panelNew" HorizontalAlignment="Stretch" Height="30" Width="80" VerticalAlignment="Stretch"  Clip="M22.5,12 C22.5,17.79899 17.79899,22.5 12,22.5 C6.2010101,22.5 1.5,17.79899 1.5,12 C1.5,6.2010101 6.2010101,1.5 12,1.5 C17.79899,1.5 22.5,6.2010101 22.5,12 z" Visibility="Collapsed">
+            <Grid.Background>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/Images/FormPic/Skin/Cloud/ProductPage/ProductList/stars.png" Stretch="Uniform"/>
+            </Grid.Background>
+            <Path x:Name="path" Data="M8,5 L21.75,24" Stretch="Fill" StrokeThickness="6" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+                <Path.Stroke>
+                    <LinearGradientBrush EndPoint="0.153,0.86" StartPoint="0.847,0.14">
+                        <GradientStop Color="#7AFFFFFF" Offset="0.257"/>
+                        <GradientStop Color="#D8FFFFFF" Offset="0.637"/>
+                        <GradientStop Color="#9BA9A9A9" Offset="0.479"/>
+                    </LinearGradientBrush>
+                </Path.Stroke>
+                <Path.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,38 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmAdvanCfg_PaymentMenu"
+	x:Name="AdvanCfg_Payment"
+    Loaded="Window_Loaded"
+    FontFamily="Microsoft YaHei"
+	Title="Menu" d:DesignWidth="768" d:DesignHeight="1360" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource background1}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36" FontFamily="Microsoft YaHei UI"><Run x:Name="tbMenuTitle" Language="zh-cn" Text="菜单"/></TextBlock>
+        <StackPanel HorizontalAlignment="Center" Margin="0,52,0,0" Width="768" Grid.Row="1" VerticalAlignment="Top">
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity="0.23" ShadowDepth="3" BlurRadius="12" Direction="300"/>
+            </StackPanel.Effect>
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="768" Height="235" Orientation="Horizontal" RenderTransformOrigin="0,0">
+                <Button x:Name="AdvanCfg_Menu_Cash" Content="现金支付" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_Cash}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_Cash_Click" />
+                <Button x:Name="AdvanCfg_Menu_IcCard" Content="储值卡支付" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_IcCard}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_IcCard_Click" />
+                <Button x:Name="AdvanCfg_Menu_NoFeeCard" Content="会员卡支付" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_NoFeeCard}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_NoFeeCard_Click" />
+                <Button x:Name="AdvanCfg_Menu_WeChatCode" Content="微信扫码" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_WeChatCode}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_WeChatCode_Click" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="768" Height="235" Orientation="Horizontal" RenderTransformOrigin="0,0">
+                <Button x:Name="AdvanCfg_Menu_AliPayCode" Content="支付宝扫码" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_AliPayCode}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_AliPayCode_Click" />
+                <Button x:Name="AdvanCfg_Menu_UnionPay" Content="银联支付" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_UnionPay}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_UnionPay_Click" />
+                <Button x:Name="AdvanCfg_Menu_QrCode" Content="二维码支付" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_QrCode}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_QrCode_Click" />
+                <Button x:Name="AdvanCfg_Menu_BestPayCode" Content="翼支付付款码" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_BestPayCode}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_BestPayCode_Click" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="768" Height="235" Orientation="Horizontal" RenderTransformOrigin="0,0">
+                <Button x:Name="AdvanCfg_Menu_Cancel" Content="返回" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource AdvanCfg_Menu_Payment_Cancel}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" Cursor="Hand" Click="AdvanCfg_Menu_Cancel_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

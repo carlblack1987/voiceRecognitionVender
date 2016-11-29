@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABF5DC62-E4D4-48E2-97FD-622AECBB8A06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarCodeScan">
+      <HintPath>bin\Debug\BarCodeScan.dll</HintPath>
+    </Reference>
+    <Reference Include="GateServer1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\GateServer1.dll</HintPath>
+    </Reference>
+    <Reference Include="HttpPlug, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HttpPlug.dll</HintPath>
+    </Reference>
+    <Reference Include="IDCard">
+      <HintPath>bin\Debug\IDCard.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonPlug">
+      <HintPath>bin\Debug\JsonPlug.dll</HintPath>
+    </Reference>
+    <Reference Include="KdbPlug, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutoSellGoodsLib\KdbPlug.dll</HintPath>
+    </Reference>
+    <Reference Include="KimmaTakeCode">
+      <HintPath>bin\Debug\KimmaTakeCode.dll</HintPath>
+    </Reference>
+    <Reference Include="KMB11, Version=1.1.2013.15, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\KMB11.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>bin\Debug\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="NoFeeCard">
+      <HintPath>bin\Debug\NoFeeCard.dll</HintPath>
+    </Reference>
+    <Reference Include="O2OServer">
+      <HintPath>bin\Debug\O2OServer.dll</HintPath>
+    </Reference>
+    <Reference Include="OnlinePay">
+      <HintPath>bin\Debug\OnlinePay.dll</HintPath>
+    </Reference>
+    <Reference Include="PosCard">
+      <HintPath>bin\Debug\PosCard.dll</HintPath>
+    </Reference>
+    <Reference Include="RealTimeGateServer">
+      <HintPath>bin\Debug\RealTimeGateServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SellEquUp">
+      <HintPath>bin\Debug\SellEquUp.dll</HintPath>
+    </Reference>
+    <Reference Include="SoftTermUpdate">
+      <HintPath>bin\Debug\SoftTermUpdate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AutoSellGoodsLib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThermalPrint">
+      <HintPath>bin\Debug\ThermalPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="WebServicePlug">
+      <HintPath>bin\Debug\WebServicePlug.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AdvertHelper.cs" />
+    <Compile Include="Common\AsileHelper.cs" />
+    <Compile Include="Common\BarCodeHelper.cs" />
+    <Compile Include="Common\CashInfoHelper.cs" />
+    <Compile Include="Common\CheckDataHelper.cs" />
+    <Compile Include="Common\DeviceControlRole.cs" />
+    <Compile Include="Common\FunHelper.cs" />
+    <Compile Include="Common\GoodsHelper.cs" />
+    <Compile Include="Common\IDCardHelper.cs" />
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\NoFeeCardHelper.cs" />
+    <Compile Include="Common\O2OHelper.cs" />
+    <Compile Include="Common\PayMentHelper.cs" />
+    <Compile Include="Common\RemoteControlHelper.cs" />
+    <Compile Include="Common\SaleStatHelper.cs" />
+    <Compile Include="Common\SysCfgHelper.cs" />
+    <Compile Include="Common\WxTakeCodeHelper.cs" />
+    <Compile Include="Enum\BusinessEnum.cs" />
+    <Compile Include="BusinessOper.cs" />
+    <Compile Include="Model\AdvertInfoModel.cs" />
+    <Compile Include="Model\AliPayCodeModel.cs" />
+    <Compile Include="Model\CardInfoModel.cs" />
+    <Compile Include="Model\CashInfoModel.cs" />
+    <Compile Include="Model\ConfigModel.cs" />
+    <Compile Include="Model\CountryModel.cs" />
+    <Compile Include="Model\DeviceControlModel.cs" />
+    <Compile Include="Model\DeviceInfoModel.cs" />
+    <Compile Include="Model\AsileModel.cs" />
+    <Compile Include="Model\DeviceStatusModel.cs" />
+    <Compile Include="Model\GoodsModel.cs" />
+    <Compile Include="Model\GoodsTypeModel.cs" />
+    <Compile Include="Model\MemberUserInfoModel.cs" />
+    <Compile Include="Model\PaymentControlModel.cs" />
+    <Compile Include="Model\PayMentInfoModel.cs" />
+    <Compile Include="Model\PrintInfoModel.cs" />
+    <Compile Include="Model\SysCfgInfoModel.cs" />
+    <Compile Include="Model\UpDownNumsModel.cs" />
+    <Compile Include="Model\VendBoxCodeModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

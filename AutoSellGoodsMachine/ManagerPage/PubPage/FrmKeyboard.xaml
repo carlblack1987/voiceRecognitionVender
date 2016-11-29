@@ -1,0 +1,111 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmKeyboard"
+	x:Name="Form_Keyboard"
+	Title="KeyBoard"
+	FlowDirection="LeftToRight"
+    WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal"
+	Width="615" Height="660"
+    FontFamily="Microsoft YaHei UI"
+    Background="{DynamicResource background2}" Foreground="{x:Null}">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="image">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="image">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image x:Name="image" Source="pack://siteoforigin:,,,/Images/ManagerPic/Pic_Button/clearinput.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23" Margin="0"/>
+        <TextBlock x:Name="tbTitle" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="295" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36"  Text="键盘输入"/>
+        <Rectangle Fill="#FFF4F4F5" Height="38" Margin="0,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="523" HorizontalAlignment="Center" RadiusX="19" RadiusY="19"/>
+        <StackPanel Margin="0,98,0,0" Grid.Row="1" VerticalAlignment="Top" Width="520" HorizontalAlignment="Center">
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity="0.23" BlurRadius="12" ShadowDepth="3" Direction="275"/>
+            </StackPanel.Effect>
+            <StackPanel Margin="0" Width="520" Orientation="Horizontal" Height="80" d:LayoutOverrides="Height, Margin">
+                <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Click="btnNumber_Click" />
+                <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Click="btnNumber_Click"/>
+            </StackPanel>
+            <StackPanel Margin="0" Width="520" Orientation="Horizontal" Height="80" d:LayoutOverrides="Height, Margin">
+                <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+            </StackPanel>
+            <StackPanel Margin="0" Width="520" Orientation="Horizontal" Height="80" d:LayoutOverrides="Height, Margin">
+                <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnPoint" Content="." HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnHeng" Content="-" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Click="btnNumber_Click"/>
+            </StackPanel>
+            <StackPanel Margin="0" Width="520" Orientation="Horizontal" Height="80" d:LayoutOverrides="Height, Margin">
+                <Button x:Name="btnA" Content="A" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnB" Content="B" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnC" Content="C" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnD" Content="D" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+            </StackPanel>
+            <StackPanel Margin="0" Width="520" Orientation="Horizontal" Height="80" d:LayoutOverrides="Height, Margin">
+                <Button x:Name="btnE" Content="E" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnF" Content="F" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnG" Content="G" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top" Click="btnNumber_Click"/>
+                <Button x:Name="btnH" Content="H" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnNumber_Click"/>
+            </StackPanel>
+            <StackPanel Margin="0" Width="520" Orientation="Horizontal" Height="80" d:LayoutOverrides="Height, Margin">
+                <Button x:Name="btnSpace" Content="退格" HorizontalAlignment="Left" Style="{DynamicResource Large buttons}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Height="80" VerticalAlignment="Top" Click="btnSpace_Click" />
+                <Button x:Name="btnDel" Content="删除" HorizontalAlignment="Left" Style="{DynamicResource Big red button}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="btnDel_Click" />
+                <Button x:Name="btnOk" Content="确定" HorizontalAlignment="Left" Style="{DynamicResource Large green button}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="btnOk_Click" />
+                <Button x:Name="btnCancel" Content="返回" HorizontalAlignment="Left" Style="{DynamicResource Big yellow button}" Width="130" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="btnCancel_Click" />
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="btnClearInput" Content="Button" Cursor="Hand" HorizontalAlignment="Right" Height="32" Margin="0,33.334,50.497,0" Grid.Row="1" Style="{DynamicResource ButtonStyle1}" VerticalAlignment="Top" Width="32" Click="btnClearInput_Click" />
+        <TextBlock x:Name="tbInput" TextWrapping="Wrap" FontSize="22" Foreground="Black" VerticalAlignment="Top" Height="36"  Margin="61.166,35.335,113.166,0" Grid.Row="1"><Run Language="zh-cn" Text="10"/></TextBlock>
+    </Grid>
+</Window>

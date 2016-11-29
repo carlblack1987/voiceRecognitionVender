@@ -1,0 +1,147 @@
+﻿<Window x:Class="AutoSellGoodsMachine.FrmDeviceCfg_CoinStock_Hopper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="720"
+        Height="860"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal"
+        Title="DeviceCfg_CoinStock_Hopper">
+    <Grid  Background="{DynamicResource background2}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="LayoutRoot_Copy"
+              Background="{DynamicResource background2}"
+              Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+            <Grid Background="Black"
+                  Opacity="0.23" />
+            <TextBlock x:Name="tbTitle" HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       TextWrapping="Wrap"
+                       Style="{DynamicResource Style_Text_FormTitle}"
+                       VerticalAlignment="Center" Width="264"><Run  Text="选择商品" /></TextBlock>
+        </Grid>
+
+        <Grid x:Name="mainPanel" Margin="0,6.667,0,47.333" Height="780" Width="700" HorizontalAlignment="Center" VerticalAlignment="Top"
+              Grid.Row="1">
+            <Grid.Effect>
+                <DropShadowEffect Opacity="0.3"
+                                  Direction="275"
+                                  BlurRadius="12" />
+            </Grid.Effect>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid x:Name="panelItem">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+            <StackPanel Margin="0,20,0,0"   HorizontalAlignment="Center"
+                          Grid.Row="1"
+                          Orientation="Horizontal">
+                <TextBlock  TextWrapping="Wrap"
+                            Margin="0"
+                            FontSize="28"
+                            Width="500"
+                            x:Name="tbProgress"
+                            VerticalAlignment="Center"
+                            TextAlignment="Center"
+                            Foreground="{DynamicResource text}"
+                            Text=""
+                            Grid.Row="1"
+                            HorizontalAlignment="Left" />
+            </StackPanel>
+            <Path Data="M0,734 L672,734"
+                  Fill="#FF42A7D7"
+                  Height="2"
+                  Margin="0,20"
+                  Stretch="Fill"
+                  Stroke="White"
+                  VerticalAlignment="Bottom"
+                  Opacity="0.5"
+                  Grid.Row="2" />
+            <StackPanel   Grid.Row="3"
+                          Margin="0,0,0,50"
+                          Orientation="Horizontal"
+                          HorizontalAlignment="Right">
+                <Button Focusable="False"
+                        Margin="0,0,50,0"
+                        Content="开启"
+                        x:Name="btnRun"
+                        HorizontalAlignment="Left"
+                        Style="{DynamicResource Blue button}"
+                        VerticalAlignment="Bottom"
+                        Width="90"
+                        Height="48"
+                        Foreground="White"
+                        FontSize="22" Click="btnRun_Click" />
+                <Button Focusable="False"
+                        Margin="0,0,50,0"
+                        Content="Stop"
+                        x:Name="btnStop"
+                        HorizontalAlignment="Left"
+                        Style="{DynamicResource Blue button}"
+                        VerticalAlignment="Bottom"
+                        Width="90"
+                        Height="48"
+                        Foreground="White"
+                        FontSize="22" Click="btnStop_Click" />
+                <Button Focusable="False"
+                        Margin="0,0,50,0"
+                        Content="Refresh"
+                        x:Name="btnRefresh"
+                        HorizontalAlignment="Left"
+                        Style="{DynamicResource Blue button}"
+                        VerticalAlignment="Bottom"
+                        Width="90"
+                        Height="48"
+                        Foreground="White"
+                        FontSize="22" Click="btnRefresh_Click" />
+                <Button Focusable="False"
+                        Margin="0,0,50,0"
+                        Content="清点"
+                        x:Name="btnQindDian"
+                        HorizontalAlignment="Left"
+                        Style="{DynamicResource Blue button}"
+                        VerticalAlignment="Bottom"
+                        Width="90"
+                        Height="48"
+                        Foreground="White"
+                        FontSize="22" Click="btnQindDian_Click" />
+                <Button Focusable="False"
+                        x:Name="btnCancel"
+                        Content="取消"
+                        Margin="40,0,0,0"
+                        HorizontalAlignment="Left"
+                        Style="{DynamicResource Yellow button}"
+                        VerticalAlignment="Bottom"
+                        Width="90"
+                        Height="48"
+                        Foreground="White"
+                        FontSize="22"
+                        Click="btnCancel_Click" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

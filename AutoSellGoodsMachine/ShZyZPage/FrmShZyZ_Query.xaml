@@ -1,0 +1,68 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmShZyZ_Query"
+	x:Name="ShZyZ_Query"
+	Loaded="Window_Loaded"
+    Closing="Window_Closing" 
+	FlowDirection="LeftToRight"
+	Width="700" Height="800"
+	WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal"
+    FontFamily="Microsoft YaHei UI"
+ 	Background="{DynamicResource background2}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{x:Null}">
+
+    <Grid x:Name="layout">
+        <Grid x:Name="panel_Content" Height="700"  HorizontalAlignment="Left" 
+                VerticalAlignment="Top" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <TranslateTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="img_Bg" Stretch="Fill" Source="pack://siteoforigin:,,,/Images/FormPic/pub/Main_Area_Lgs_Bottom.png" Grid.ColumnSpan="2"></Image>
+
+            <!--上海志愿者活动查询-->
+            <Image x:Name="imgShZy_Query_ZhiYuanZhe" HorizontalAlignment="Left"
+                   Margin="195,120,10,140" Stretch="None" 
+                   VerticalAlignment="Top"  Cursor="Hand"
+                   Source="pack://siteoforigin:,,,/Images/FormPic/pub/ShZyZ_Query_ZhiYuanZhe.png" MouseLeftButtonDown="imgShZy_Query_ZhiYuanZhe_MouseLeftButtonDown"></Image>
+            <!--上海志愿基金会查询-->
+            <Image x:Name="imgShZy_Query_JiJinHui" HorizontalAlignment="Left"
+                   Margin="195,260,10,50" Stretch="None" 
+                   VerticalAlignment="Top"  Cursor="Hand"
+                   Source="pack://siteoforigin:,,,/Images/FormPic/pub/ShZyZ_Query_JiJinHui.png"  
+                  MouseLeftButtonDown="imgShZy_Query_JiJinHui_MouseLeftButtonDown" ></Image>
+        </Grid>
+
+        <Grid x:Name="panel_Bottom" Height="100"  HorizontalAlignment="Left" 
+                VerticalAlignment="Bottom" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <TranslateTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+
+            <Image x:Name="imgBottom" Stretch="Fill" Source="pack://siteoforigin:,,,/Images/AdvertPic/advert_26_bg.png"></Image>
+
+            <TextBlock  x:Name="tbOutTime"  FontSize="35" TextAlignment="Justify"
+                        HorizontalAlignment="Left" VerticalAlignment="Center" 
+                        Background="Transparent" Foreground="White" Text="" Margin="20,0,0,0">
+            </TextBlock>
+            <Button x:Name="btnCancel" Content="返回"  Cursor="Hand" Focusable="False" 
+                    HorizontalAlignment="Right" Height="50" Margin="0,20,10,10" 
+                    Style="{DynamicResource Green button}" VerticalAlignment="Stretch" 
+                    Width="100" FontSize="25" Foreground="White" Click="btnCancel_Click" />
+        </Grid>
+    </Grid>
+</Window>

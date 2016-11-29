@@ -1,0 +1,90 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmAdvanCfg_UpDownCfg_Cfg"
+	x:Name="AdvanCfg_UpDownCfg_Cfg"
+ 	WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Normal"
+	FlowDirection="LeftToRight"
+	FontFamily="Microsoft YaHei" Width="730" Height="720">
+
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource background2}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23"/>
+        <TextBlock x:Name="tbTitle" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36"  Text="通信设置"/>
+        <Grid Margin="0,52.667,0,0" Grid.Row="1" Width="680" Height="600" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid Height="303" VerticalAlignment="Top">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="2" Opacity="0.3" Direction="275"/>
+                </Grid.Effect>
+
+                <TextBlock x:Name="tbVendBoxCode" HorizontalAlignment="Left" TextWrapping="Wrap" Width="196" Style="{DynamicResource Style_Text_Column}" VerticalAlignment="Top" Height="36"  Margin="6,0,0,0" Text="货柜" TextAlignment="Right"></TextBlock>
+                <TextBlock x:Name="tbSellGoodsType" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column}" VerticalAlignment="Top" Height="36"  Margin="25,65,0,33" RenderTransformOrigin="0.505,1.111" TextAlignment="Right" Text="出货方式"></TextBlock>
+                <TextBlock x:Name="tbShippPort" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column}" VerticalAlignment="Top" Height="36"  Margin="25,130,0,0" Text="驱动板串口" TextAlignment="Right"></TextBlock>
+                <ComboBox Focusable="False" FontSize="22" Height="30" HorizontalAlignment="Left" Margin="228,130,0,0" Name="cmbShippPort" VerticalAlignment="Top" Width="248" />
+                <TextBlock Style="{DynamicResource Style_Text_Column_1}" Height="36" HorizontalAlignment="Left" Margin="228,0,0,0" Name="tbVendCode_Value" Text="柜1" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" />
+                <TextBlock Style="{DynamicResource Style_Text_Column_1}" Height="36" HorizontalAlignment="Left" Margin="228,65,0,0" Name="tbSellGoodsType_Value" RenderTransformOrigin="0.505,1.111" Text="简易型升降" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" />
+                <TextBlock Style="{DynamicResource Style_Text_Column}" Height="36" HorizontalAlignment="Left" Margin="24,198,0,0" Name="tbUpDownSellModel" Text="出货指令" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" />
+                <RadioButton Focusable="False" FontSize="8" Foreground="White" Height="18.666" HorizontalAlignment="Left" IsChecked="True" Margin="296,212,0,0" Name="rdbUpDownSellModel_ZhiJie" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource RadioButtonStyle}" VerticalAlignment="Top" Width="68" Content="直接升降">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <RadioButton Content="参数升降" Focusable="False" FontSize="8" Foreground="White" Height="18.666" HorizontalAlignment="Left" IsChecked="True" Margin="515,212,0,0" Name="rdbUpDownSellModel_Pra" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource RadioButtonStyle}" VerticalAlignment="Top" Width="82">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+
+                <Grid Height="40" Margin="0,250,0,0">
+                    <TextBlock x:Name="tbUpDownIsQueryElectStatus" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column}" VerticalAlignment="Top" Height="36"  Margin="25,0,0,0" Text="光电管检测" TextAlignment="Right"></TextBlock>
+                    <RadioButton Content="开启" Focusable="False" FontSize="8" Foreground="White" Height="18.666" HorizontalAlignment="Left" IsChecked="True" Margin="267,15,0,0" Name="rdbUpDownIsQueryElectStatus_Yes" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource RadioButtonStyle}" VerticalAlignment="Top" Width="40.666" >
+                        <RadioButton.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="3" ScaleY="3" />
+                                <SkewTransform />
+                                <RotateTransform />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </RadioButton.RenderTransform>
+                    </RadioButton>
+                    <RadioButton Content="关闭" Focusable="False" FontSize="8" Foreground="White" Height="18.666" HorizontalAlignment="Left" IsChecked="True" Margin="407,15,0,0" Name="rdbUpDownIsQueryElectStatus_No" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource RadioButtonStyle}" VerticalAlignment="Top" Width="50.666">
+                        <RadioButton.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="3" ScaleY="3" />
+                                <SkewTransform />
+                                <RotateTransform />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </RadioButton.RenderTransform>
+                    </RadioButton>
+
+                </Grid>
+            </Grid>
+
+            <Button x:Name="btnCancel" Content="取消" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Margin="0,0,0,10" Style="{DynamicResource Yellow button}" VerticalAlignment="Bottom" Width="88" Height="74" FontSize="22" Foreground="White" Click="btnCancel_Click" />
+            <Button x:Name="btnSave" Content="保存" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Margin="0,0,118,10" Style="{DynamicResource Green button}" VerticalAlignment="Bottom" Width="88" Height="74"  FontSize="22" Foreground="White" Click="btnSave_Click" />
+            <Path Data="M0,734 L672,734" Fill="#FFF4F4F5" Height="2" Margin="0,0,0,105" Stretch="Fill" Stroke="White" VerticalAlignment="Bottom" Opacity="0.5"/>
+            <TextBlock Height="36" HorizontalAlignment="Left" Margin="25,309,0,0" Name="tbLeftSpace_Title" RenderTransformOrigin="0.505,1.111" Style="{DynamicResource Style_Text_Column}" Text="小车左边格数" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" />
+            <TextBlock Height="36" HorizontalAlignment="Left" Margin="24,360,0,0" Name="tbMiddleSpace_Title" RenderTransformOrigin="0.505,1.111" Style="{DynamicResource Style_Text_Column}" Text="小车中间格数" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" />
+            <TextBlock Height="36" HorizontalAlignment="Left" Margin="25,412,0,0" Name="tbRightSpace_Title" RenderTransformOrigin="0.505,1.111" Style="{DynamicResource Style_Text_Column}" Text="小车右边格数" TextAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" />
+            <TextBox Background="#FFF4F4F5" BorderThickness="0" FontSize="22" Foreground="Black" HorizontalAlignment="Left" IsReadOnly="True" Margin="228,309,0,0" Name="tbLeftSpace_Value" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" PreviewMouseLeftButtonDown="tbLeftSpace_Value_PreviewMouseLeftButtonDown" />
+            <TextBox Background="#FFF4F4F5" BorderThickness="0" FontSize="22" Foreground="Black" HorizontalAlignment="Left" IsReadOnly="True" Margin="228,360,0,0" Name="tbMiddleSpace_Value" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" PreviewMouseLeftButtonDown="tbMiddleSpace_Value_PreviewMouseLeftButtonDown"/>
+            <TextBox Background="#FFF4F4F5" BorderThickness="0" FontSize="22" Foreground="Black" HorizontalAlignment="Left" IsReadOnly="True" Margin="228,412,0,0" Name="tbRightSpace_Value" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" PreviewMouseLeftButtonDown="tbRightSpace_Value_PreviewMouseLeftButtonDown" />
+        </Grid>
+    </Grid>
+</Window>
+

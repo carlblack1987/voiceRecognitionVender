@@ -1,0 +1,205 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmBaseCfg"
+	x:Name="BaseCfg"
+ 	d:DesignWidth="768" d:DesignHeight="1360" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+	FlowDirection="LeftToRight"
+	FontFamily="Microsoft YaHei"
+	>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="image">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="image">
+                                                <EasingDoubleKeyFrame KeyTime="0" Value="0.8"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Image x:Name="image" Source="pack://siteoforigin:,,,/Images/ManagerPic/Pic_Button/clearinput.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource background1}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23"/>
+        <TextBlock x:Name="tbTitle" HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36"  Text="基本设置"/>
+        <Grid Margin="0,52.667,0,47.333" Grid.Row="1" Width="680" Height="1180" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid Height="196" VerticalAlignment="Top">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="2" Opacity="0.3" Direction="275"/>
+                </Grid.Effect>
+                <Path Data="M0,734 L672,734" Fill="#FFF4F4F5" Height="2" Margin="0,36,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" Opacity="0.5"/>
+                <TextBlock x:Name="tbBaseTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_Section}" VerticalAlignment="Top" Height="36" ><Run Language="zh-cn" Text="基础信息"/></TextBlock>
+                <TextBlock x:Name="tbVmCode" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column_1}" VerticalAlignment="Top" Height="36"  Margin="25,66,0,0" Text="机器自编号" TextAlignment="Right"></TextBlock>
+                <TextBlock x:Name="tbLanguage" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column_1}" VerticalAlignment="Bottom" Height="36"  Margin="25,0,0,33" RenderTransformOrigin="0.505,1.111" TextAlignment="Right" Text="语言"></TextBlock>
+                <Rectangle Fill="#FFF4F4F5" Height="39" Margin="227.997,64.5,202.002,0" VerticalAlignment="Top" RadiusX="20" RadiusY="20" Width="250" d:LayoutOverrides="HorizontalMargin"/>
+                <Button x:Name="btnClearVmCode" Content="Button" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Height="35" Margin="0,66.5,204.336,0" Style="{DynamicResource ButtonStyle2}" VerticalAlignment="Top" Width="35" Click="btnClearVmCode_Click" />
+                <TextBox x:Name="tbVmCode_Value" TextWrapping="Wrap" BorderThickness="0" Background="#FFF4F4F5" FontSize="22" Foreground="Black" VerticalAlignment="Top" Height="36"  Margin="263,67.5,243,0" d:LayoutOverrides="Width" TextAlignment="Left" PreviewMouseLeftButtonDown="tbVmCode_Value_PreviewMouseLeftButtonDown"></TextBox>
+                <RadioButton x:Name="rdbLanguage_Chinese" Focusable="False" Content="中文" HorizontalAlignment="Left" Height="18.666" Margin="264,0,0,36" VerticalAlignment="Bottom" Width="40.666" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="HorizontalAlignment">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <RadioButton x:Name="rdbLanguage_English" Focusable="False" Content="English" HorizontalAlignment="Left" Height="18.666" Margin="414,0,0,36" VerticalAlignment="Bottom" Width="50.666" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <RadioButton Content="French" Focusable="False" FontSize="8" Foreground="White" Height="18.666" HorizontalAlignment="Left" IsChecked="True" Margin="264,0,0,-20" Name="rdbLanguage_French" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource RadioButtonStyle}" VerticalAlignment="Bottom" Width="40">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+
+            </Grid>
+            <Grid Height="225" Margin="0,212,0,0" VerticalAlignment="Top">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="2" Opacity="0.3" Direction="275"/>
+                </Grid.Effect>
+                <Path Data="M0,734 L672,734" Fill="#FFF4F4F5" Height="2" Margin="0,36,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" Opacity="0.5"/>
+                <TextBlock x:Name="tbNetTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_Section}" VerticalAlignment="Top" Height="36" ><Run Language="zh-cn" Text="通信设置"/></TextBlock>
+                <RadioButton x:Name="rdbNetSwitch_Run" Focusable="False" Content="开启" HorizontalAlignment="Left" Height="18.666" Margin="276,76,0,0" VerticalAlignment="Top" Width="49" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5" >
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <RadioButton x:Name="rdbNetSwitch_Stop" Focusable="False" Content="关闭" HorizontalAlignment="Left" Height="18.666" Margin="438,76,0,0" VerticalAlignment="Top" Width="70.666" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                <TextBlock x:Name="tbNetSwitch" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column_1}" VerticalAlignment="Bottom" Height="36"  Margin="25,0,0,128" Text="通信功能" TextAlignment="Right"></TextBlock>
+                <TextBlock x:Name="tbPhoneNum" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column_1}" VerticalAlignment="Bottom" Height="36"  Margin="25,0,0,69" Text="通信号码" TextAlignment="Right"></TextBlock>
+                <TextBlock x:Name="tbNetPwd" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column_1}" VerticalAlignment="Bottom" Height="36"  Margin="25,0,0,10" Text="通信密码" TextAlignment="Right"></TextBlock>
+                <Rectangle Fill="#FFF4F4F5" Height="39" Margin="230,0,200,68" VerticalAlignment="Bottom" RadiusX="20" RadiusY="20" Width="250" d:LayoutOverrides="HorizontalMargin" />
+                <Button x:Name="btnClearPhoneNum" Content="Button" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Height="35" Margin="0,0,202,70" Style="{DynamicResource ButtonStyle2}" VerticalAlignment="Bottom" Width="35" Click="btnClearPhoneNum_Click" />
+                <TextBox x:Name="tbPhoneNum_Value" TextWrapping="Wrap" BorderThickness="0" Background="#FFF4F4F5" FontSize="22" Foreground="Black" VerticalAlignment="Bottom" Height="36" Margin="263,0,243,68" TextAlignment="Left" d:LayoutOverrides="Width"  PreviewMouseLeftButtonDown="tbPhoneNum_Value_PreviewMouseLeftButtonDown"></TextBox>
+
+                <Rectangle Fill="#FFF4F4F5" Height="39" Margin="230,0,200,9" VerticalAlignment="Bottom" RadiusX="20" RadiusY="20" Width="250" d:LayoutOverrides="HorizontalMargin" />
+                <Button x:Name="btnClearNetPwd" Content="Button" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Height="35" Margin="0,0,202,11" Style="{DynamicResource ButtonStyle2}" VerticalAlignment="Bottom" Width="35" Click="btnClearNetPwd_Click" />
+                <TextBox x:Name="tbNetPwd_Value" TextWrapping="Wrap" BorderThickness="0" Background="#FFF4F4F5" FontSize="22" Foreground="Black" VerticalAlignment="Bottom" Height="36" Margin="263,0,243,9" TextAlignment="Left" d:LayoutOverrides="Width"  PreviewMouseLeftButtonDown="tbNetPwd_Value_PreviewMouseLeftButtonDown"></TextBox>
+            </Grid>
+            <Grid Height="225" Margin="0,437,0,0" VerticalAlignment="Top">
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="2" Opacity="0.3" Direction="275"/>
+                </Grid.Effect>
+                <Path Data="M0,734 L672,734" Fill="#FFF4F4F5" Height="2" Margin="0,36,0,0" Stretch="Fill" Stroke="White" VerticalAlignment="Top" Opacity="0.5"/>
+                <TextBlock x:Name="tbOtherTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_Section}" VerticalAlignment="Top" Height="36" ><Run Language="zh-cn" Text="其它设置"/></TextBlock>
+                <Grid>
+                    <RadioButton x:Name="rdbStock_Run" Focusable="False" Content="全开" HorizontalAlignment="Left" Height="18.666" Margin="276,76,0,0" VerticalAlignment="Top" Width="49" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="HorizontalAlignment">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                    <RadioButton x:Name="rdbStock_Stop" Focusable="False" Content="全关" HorizontalAlignment="Left" Height="18.666" Margin="438,76,0,0" VerticalAlignment="Top" Width="70.666" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5" Checked="rdbTmpModel_Stop1_Checked">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="3" ScaleY="3"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                </RadioButton>
+                    <TextBlock x:Name="tbStock" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column_1}" VerticalAlignment="Bottom" Height="36"  Margin="25,0,0,128" Text="库存管理" TextAlignment="Right"></TextBlock>
+                </Grid>
+
+                <Grid Margin="0,60,0,0">
+                    <RadioButton x:Name="rdbKeyBoard_Small" Focusable="False" Content="小键盘" HorizontalAlignment="Left" Height="18.666" Margin="276,76,0,0" VerticalAlignment="Top" Width="49" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="HorizontalAlignment">
+                        <RadioButton.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="3" ScaleY="3"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </RadioButton.RenderTransform>
+                    </RadioButton>
+                    <RadioButton x:Name="rdbKeyBoard_Big" Focusable="False" Content="大键盘" HorizontalAlignment="Left" Height="18.666" Margin="438,76,0,0" VerticalAlignment="Top" Width="70.666" Style="{DynamicResource RadioButtonStyle}" FontSize="8"  Foreground="White" IsChecked="True" RenderTransformOrigin="0.5,0.5" Checked="rdbTmpModel_Stop1_Checked">
+                        <RadioButton.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="3" ScaleY="3"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </RadioButton.RenderTransform>
+                    </RadioButton>
+                    <TextBlock x:Name="tbKeyBoard" HorizontalAlignment="Left" TextWrapping="Wrap" Width="177" Style="{DynamicResource Style_Text_Column_1}" VerticalAlignment="Bottom" Height="36"  Margin="25,0,0,69" Text="输入键盘" TextAlignment="Right"></TextBlock>
+                </Grid>
+            </Grid>
+
+            <Button x:Name="btnCancel" Content="取消" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Margin="0,0,0,20" Style="{DynamicResource Yellow button}" VerticalAlignment="Bottom" Width="88" Height="74" FontSize="22" Foreground="White" Click="btnCancel_Click" />
+            <Button x:Name="btnSave" Content="保存" Cursor="Hand" Focusable="False" HorizontalAlignment="Right" Margin="0,0,118,20" Style="{DynamicResource Green button}" VerticalAlignment="Bottom" Width="88" Height="74"  FontSize="22" Foreground="White" Click="btnSave_Click" />
+            <Path Data="M0,734 L672,734" Fill="#FFF4F4F5" Height="2" Margin="0,0,0,115" Stretch="Fill" Stroke="White" VerticalAlignment="Bottom" Opacity="0.5"/>
+        </Grid>
+    </Grid>
+</Window>

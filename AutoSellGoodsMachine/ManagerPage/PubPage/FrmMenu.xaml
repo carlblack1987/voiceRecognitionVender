@@ -1,0 +1,47 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="AutoSellGoodsMachine.FrmMenu"
+	x:Name="Menu"
+    Loaded="Window_Loaded"
+    Closing="Window_Closing" 
+	Title="Menu" d:DesignWidth="768" d:DesignHeight="1360" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid x:Name="LayoutRoot" Background="{DynamicResource background1}" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Black" Opacity="0.23"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,0,0,0" TextWrapping="Wrap" Width="195" Style="{DynamicResource Style_Text_FormTitle}" VerticalAlignment="Center" Height="36" FontFamily="Microsoft YaHei UI"><Run x:Name="tbMenuTitle" Language="zh-cn" Text="菜单"/></TextBlock>
+        <StackPanel HorizontalAlignment="Center" Margin="0,52,0,0" Width="768" Grid.Row="1" VerticalAlignment="Top">
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity="0.23" ShadowDepth="3" BlurRadius="12" Direction="300"/>
+            </StackPanel.Effect>
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="768" Height="235" Orientation="Horizontal" RenderTransformOrigin="0,0">
+                <Button x:Name="Menu_AsileCfg" Content="货道设置" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_AsileCfg}" VerticalAlignment="Top" Width="192" FontSize="26" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_AsileCfg_Click" Cursor="Hand" />
+                <Button x:Name="Menu_RefCfg" Content="制冷设置" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_RefCfg_Ref}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_RefCfg_Click" Cursor="Hand" />
+                <Button x:Name="Menu_Energy" Content="节能设置" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Energy}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Energy_Click" Cursor="Hand" />
+                <Button x:Name="Menu_SaleModel" Content="销售模式" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_SaleModel}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_SaleModel_Click" Cursor="Hand" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="768" Height="235" Orientation="Horizontal" RenderTransformOrigin="0,0">
+                <Button x:Name="Menu_Goods" Content="商品管理" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Goods}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Goods_Click" Cursor="Hand" />
+                <Button x:Name="Menu_Stock" Content="库存设置" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Stock}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Stock_Click" Cursor="Hand" />
+                <Button x:Name="Menu_Stat" Content="销售统计" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Stat}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Stat_Click" Cursor="Hand" />
+                <Button x:Name="Menu_Diagnose" Content="机器诊断" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Diagnose}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Diagnose_Click" Cursor="Hand" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="768" Height="235" Orientation="Horizontal" RenderTransformOrigin="0,0">
+                <Button x:Name="Menu_AsileTest" Content="货道测试" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_AsileTest}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_AsileTest_Click" Cursor="Hand" />
+                <Button x:Name="Menu_DeviceCfg" Content="硬件设备维护" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_DeviceCfg}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Cursor="Hand" Click="Menu_DeviceCfg_Click" />
+                <Button x:Name="Menu_Advert" Content="广告设置" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Advert}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Advert_Click" Cursor="Hand" />
+                <Button x:Name="Menu_BaseCfg" Content="基本设置" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_BaseCfg}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei"  Cursor="Hand" MouseLeftButtonDown="Menu_BaseCfg_MouseLeftButtonDown" MouseLeftButtonUp="Menu_BaseCfg_MouseLeftButtonUp" Click="Menu_BaseCfg_Click" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="768" Height="235" Orientation="Horizontal" RenderTransformOrigin="0,0">
+                <Button x:Name="Menu_EditPwd" Content="修改密码" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_EditPwd}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_EditPwd_Click" Cursor="Hand" />
+                <Button x:Name="Menu_AdvanCfg" Content="高级设置" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_AdvanCfg}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_AdvanCfg_Click" Cursor="Hand" />
+                <Button x:Name="Menu_Cancel" Content="返回系统" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Cancel}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Cancel_Click" Cursor="Hand" />
+                <Button x:Name="Menu_Close" Content="关闭系统" HorizontalAlignment="Left" Height="235" Margin="0" Style="{DynamicResource Menu_Close}" VerticalAlignment="Top" Width="192" FontSize="28" Foreground="White" Focusable="False" FontFamily="Microsoft YaHei" Click="Menu_Close_Click" Cursor="Hand" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
